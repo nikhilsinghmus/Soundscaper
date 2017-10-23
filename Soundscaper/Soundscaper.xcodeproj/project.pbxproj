@@ -14,23 +14,6 @@
 		248A9C901F95A0FD004F94CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 248A9C8E1F95A0FD004F94CA /* Main.storyboard */; };
 		248A9C921F95A0FD004F94CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 248A9C911F95A0FD004F94CA /* Assets.xcassets */; };
 		248A9C951F95A0FD004F94CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 248A9C931F95A0FD004F94CA /* LaunchScreen.storyboard */; };
-		248A9CE61F95A4F6004F94CA /* libcsound.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 248A9CC11F95A15E004F94CA /* libcsound.a */; };
-		248A9CE71F95A4F9004F94CA /* libsndfile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 248A9CC21F95A15E004F94CA /* libsndfile.a */; };
-		248A9CE81F95A504004F94CA /* CsoundObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 248A9CA81F95A15E004F94CA /* CsoundObj.m */; };
-		248A9CE91F95A507004F94CA /* CsoundMIDI.m in Sources */ = {isa = PBXBuildFile; fileRef = 248A9CA11F95A15E004F94CA /* CsoundMIDI.m */; };
-		248A9CEA1F95A509004F94CA /* MidiWidgetsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 248A9CA21F95A15E004F94CA /* MidiWidgetsManager.m */; };
-		248A9CEB1F95A50A004F94CA /* SliderMidiWidgetWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 248A9CA31F95A15E004F94CA /* SliderMidiWidgetWrapper.m */; };
-		248A9CEC1F95A511004F94CA /* CsoundMomentaryButtonBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = 248A9CAC1F95A15E004F94CA /* CsoundMomentaryButtonBinding.m */; };
-		248A9CED1F95A512004F94CA /* CsoundLabelBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = 248A9CAE1F95A15E004F94CA /* CsoundLabelBinding.m */; };
-		248A9CEE1F95A515004F94CA /* CsoundSwitchBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = 248A9CAF1F95A15E004F94CA /* CsoundSwitchBinding.m */; };
-		248A9CEF1F95A516004F94CA /* CsoundButtonBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = 248A9CB01F95A15E004F94CA /* CsoundButtonBinding.m */; };
-		248A9CF01F95A518004F94CA /* CsoundSliderBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = 248A9CB11F95A15E004F94CA /* CsoundSliderBinding.m */; };
-		248A9CF11F95A51A004F94CA /* CsoundUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 248A9CB21F95A15E004F94CA /* CsoundUI.m */; };
-		248A9CF21F95A526004F94CA /* CsoundAccelerometerBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = 248A9CB91F95A15E004F94CA /* CsoundAccelerometerBinding.m */; };
-		248A9CF31F95A528004F94CA /* CsoundMotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 248A9CBC1F95A15E004F94CA /* CsoundMotion.m */; };
-		248A9CF41F95A529004F94CA /* CsoundAttitudeBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = 248A9CBF1F95A15E004F94CA /* CsoundAttitudeBinding.m */; };
-		248A9CF51F95A576004F94CA /* CsoundGyroscopeBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = 248A9CBE1F95A15E004F94CA /* CsoundGyroscopeBinding.m */; };
-		248A9CF71F95A8E8004F94CA /* main.csd in Resources */ = {isa = PBXBuildFile; fileRef = 248A9CF61F95A8E8004F94CA /* main.csd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,70 +26,6 @@
 		248A9C911F95A0FD004F94CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		248A9C941F95A0FD004F94CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		248A9C961F95A0FD004F94CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		248A9C9C1F95A120004F94CA /* Soundscaper-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Soundscaper-Bridging-Header.h"; sourceTree = "<group>"; };
-		248A9C9F1F95A15E004F94CA /* CsoundObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CsoundObj.h; sourceTree = "<group>"; };
-		248A9CA11F95A15E004F94CA /* CsoundMIDI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CsoundMIDI.m; sourceTree = "<group>"; };
-		248A9CA21F95A15E004F94CA /* MidiWidgetsManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MidiWidgetsManager.m; sourceTree = "<group>"; };
-		248A9CA31F95A15E004F94CA /* SliderMidiWidgetWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SliderMidiWidgetWrapper.m; sourceTree = "<group>"; };
-		248A9CA41F95A15E004F94CA /* CsoundMIDI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CsoundMIDI.h; sourceTree = "<group>"; };
-		248A9CA51F95A15E004F94CA /* SliderMidiWidgetWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SliderMidiWidgetWrapper.h; sourceTree = "<group>"; };
-		248A9CA61F95A15E004F94CA /* MidiWidgetsManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MidiWidgetsManager.h; sourceTree = "<group>"; };
-		248A9CA71F95A15E004F94CA /* MidiWidgetWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MidiWidgetWrapper.h; sourceTree = "<group>"; };
-		248A9CA81F95A15E004F94CA /* CsoundObj.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CsoundObj.m; sourceTree = "<group>"; };
-		248A9CAB1F95A15E004F94CA /* CsoundSliderBinding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CsoundSliderBinding.h; sourceTree = "<group>"; };
-		248A9CAC1F95A15E004F94CA /* CsoundMomentaryButtonBinding.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CsoundMomentaryButtonBinding.m; sourceTree = "<group>"; };
-		248A9CAD1F95A15E004F94CA /* CsoundUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CsoundUI.h; sourceTree = "<group>"; };
-		248A9CAE1F95A15E004F94CA /* CsoundLabelBinding.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CsoundLabelBinding.m; sourceTree = "<group>"; };
-		248A9CAF1F95A15E004F94CA /* CsoundSwitchBinding.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CsoundSwitchBinding.m; sourceTree = "<group>"; };
-		248A9CB01F95A15E004F94CA /* CsoundButtonBinding.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CsoundButtonBinding.m; sourceTree = "<group>"; };
-		248A9CB11F95A15E004F94CA /* CsoundSliderBinding.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CsoundSliderBinding.m; sourceTree = "<group>"; };
-		248A9CB21F95A15E004F94CA /* CsoundUI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CsoundUI.m; sourceTree = "<group>"; };
-		248A9CB31F95A15E004F94CA /* CsoundMomentaryButtonBinding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CsoundMomentaryButtonBinding.h; sourceTree = "<group>"; };
-		248A9CB41F95A15E004F94CA /* CsoundLabelBinding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CsoundLabelBinding.h; sourceTree = "<group>"; };
-		248A9CB51F95A15E004F94CA /* CsoundButtonBinding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CsoundButtonBinding.h; sourceTree = "<group>"; };
-		248A9CB61F95A15E004F94CA /* CsoundSwitchBinding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CsoundSwitchBinding.h; sourceTree = "<group>"; };
-		248A9CB81F95A15E004F94CA /* CsoundGyroscopeBinding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CsoundGyroscopeBinding.h; sourceTree = "<group>"; };
-		248A9CB91F95A15E004F94CA /* CsoundAccelerometerBinding.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CsoundAccelerometerBinding.m; sourceTree = "<group>"; };
-		248A9CBA1F95A15E004F94CA /* CsoundMotion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CsoundMotion.h; sourceTree = "<group>"; };
-		248A9CBB1F95A15E004F94CA /* CsoundAttitudeBinding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CsoundAttitudeBinding.h; sourceTree = "<group>"; };
-		248A9CBC1F95A15E004F94CA /* CsoundMotion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CsoundMotion.m; sourceTree = "<group>"; };
-		248A9CBD1F95A15E004F94CA /* CsoundAccelerometerBinding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CsoundAccelerometerBinding.h; sourceTree = "<group>"; };
-		248A9CBE1F95A15E004F94CA /* CsoundGyroscopeBinding.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CsoundGyroscopeBinding.m; sourceTree = "<group>"; };
-		248A9CBF1F95A15E004F94CA /* CsoundAttitudeBinding.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CsoundAttitudeBinding.m; sourceTree = "<group>"; };
-		248A9CC11F95A15E004F94CA /* libcsound.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcsound.a; sourceTree = "<group>"; };
-		248A9CC21F95A15E004F94CA /* libsndfile.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libsndfile.a; sourceTree = "<group>"; };
-		248A9CC41F95A15E004F94CA /* csdebug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = csdebug.h; sourceTree = "<group>"; };
-		248A9CC51F95A15E004F94CA /* sysdep.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sysdep.h; sourceTree = "<group>"; };
-		248A9CC61F95A15E004F94CA /* float-version.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "float-version.h"; sourceTree = "<group>"; };
-		248A9CC71F95A15E004F94CA /* version.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = version.h; sourceTree = "<group>"; };
-		248A9CC81F95A15E004F94CA /* OpcodeBase.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = OpcodeBase.hpp; sourceTree = "<group>"; };
-		248A9CC91F95A15E004F94CA /* plugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = plugin.h; sourceTree = "<group>"; };
-		248A9CCA1F95A15E004F94CA /* text.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = text.h; sourceTree = "<group>"; };
-		248A9CCB1F95A15E004F94CA /* csound_standard_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = csound_standard_types.h; sourceTree = "<group>"; };
-		248A9CCC1F95A15E004F94CA /* pvfileio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pvfileio.h; sourceTree = "<group>"; };
-		248A9CCD1F95A15E004F94CA /* interlocks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = interlocks.h; sourceTree = "<group>"; };
-		248A9CCE1F95A15E004F94CA /* pstream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pstream.h; sourceTree = "<group>"; };
-		248A9CCF1F95A15E004F94CA /* csound.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = csound.hpp; sourceTree = "<group>"; };
-		248A9CD01F95A15E004F94CA /* modload.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = modload.h; sourceTree = "<group>"; };
-		248A9CD11F95A15E004F94CA /* CppSound.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CppSound.hpp; sourceTree = "<group>"; };
-		248A9CD21F95A15E004F94CA /* cs_par_structs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cs_par_structs.h; sourceTree = "<group>"; };
-		248A9CD31F95A15E004F94CA /* csound_threaded.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = csound_threaded.hpp; sourceTree = "<group>"; };
-		248A9CD41F95A15E004F94CA /* ugen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ugen.h; sourceTree = "<group>"; };
-		248A9CD51F95A15E004F94CA /* csoundCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = csoundCore.h; sourceTree = "<group>"; };
-		248A9CD61F95A15E004F94CA /* soundio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = soundio.h; sourceTree = "<group>"; };
-		248A9CD71F95A15E004F94CA /* pools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pools.h; sourceTree = "<group>"; };
-		248A9CD81F95A15E004F94CA /* filebuilding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = filebuilding.h; sourceTree = "<group>"; };
-		248A9CD91F95A15E004F94CA /* csound_type_system.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = csound_type_system.h; sourceTree = "<group>"; };
-		248A9CDA1F95A15E004F94CA /* csound_data_structures.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = csound_data_structures.h; sourceTree = "<group>"; };
-		248A9CDB1F95A15E004F94CA /* cscore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cscore.h; sourceTree = "<group>"; };
-		248A9CDC1F95A15E004F94CA /* msg_attr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = msg_attr.h; sourceTree = "<group>"; };
-		248A9CDD1F95A15E004F94CA /* cfgvar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cfgvar.h; sourceTree = "<group>"; };
-		248A9CDE1F95A15E004F94CA /* csdl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = csdl.h; sourceTree = "<group>"; };
-		248A9CDF1F95A15E004F94CA /* cwindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cwindow.h; sourceTree = "<group>"; };
-		248A9CE01F95A15E004F94CA /* CsoundFile.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CsoundFile.hpp; sourceTree = "<group>"; };
-		248A9CE11F95A15E004F94CA /* csound.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = csound.h; sourceTree = "<group>"; };
-		248A9CE21F95A15E004F94CA /* LICENSE.TXT */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.TXT; sourceTree = "<group>"; };
-		248A9CF61F95A8E8004F94CA /* main.csd */ = {isa = PBXFileReference; lastKnownFileType = text; path = main.csd; sourceTree = "<group>"; };
 		4DA96C9DEC335740B16DD5DB /* Pods_Soundscaper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Soundscaper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		638AFCF9A577F23A64417194 /* Pods-Soundscaper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soundscaper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Soundscaper/Pods-Soundscaper.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,8 +35,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				248A9CE61F95A4F6004F94CA /* libcsound.a in Frameworks */,
-				248A9CE71F95A4F9004F94CA /* libsndfile.a in Frameworks */,
 				22740670FAA27A8543BE7098 /* Pods_Soundscaper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,143 +63,15 @@
 		248A9C871F95A0FD004F94CA /* Soundscaper */ = {
 			isa = PBXGroup;
 			children = (
-				248A9C9D1F95A15E004F94CA /* csound-iOS */,
-				248A9CF61F95A8E8004F94CA /* main.csd */,
 				248A9C881F95A0FD004F94CA /* AppDelegate.swift */,
 				248A9C8A1F95A0FD004F94CA /* art.scnassets */,
 				248A9C8C1F95A0FD004F94CA /* ViewController.swift */,
-				248A9C9C1F95A120004F94CA /* Soundscaper-Bridging-Header.h */,
 				248A9C8E1F95A0FD004F94CA /* Main.storyboard */,
 				248A9C911F95A0FD004F94CA /* Assets.xcassets */,
 				248A9C931F95A0FD004F94CA /* LaunchScreen.storyboard */,
 				248A9C961F95A0FD004F94CA /* Info.plist */,
 			);
 			path = Soundscaper;
-			sourceTree = "<group>";
-		};
-		248A9C9D1F95A15E004F94CA /* csound-iOS */ = {
-			isa = PBXGroup;
-			children = (
-				248A9C9E1F95A15E004F94CA /* classes */,
-				248A9CC01F95A15E004F94CA /* libs */,
-				248A9CC31F95A15E004F94CA /* headers */,
-				248A9CE21F95A15E004F94CA /* LICENSE.TXT */,
-			);
-			path = "csound-iOS";
-			sourceTree = "<group>";
-		};
-		248A9C9E1F95A15E004F94CA /* classes */ = {
-			isa = PBXGroup;
-			children = (
-				248A9C9F1F95A15E004F94CA /* CsoundObj.h */,
-				248A9CA01F95A15E004F94CA /* midi */,
-				248A9CA81F95A15E004F94CA /* CsoundObj.m */,
-				248A9CA91F95A15E004F94CA /* bindings */,
-			);
-			path = classes;
-			sourceTree = "<group>";
-		};
-		248A9CA01F95A15E004F94CA /* midi */ = {
-			isa = PBXGroup;
-			children = (
-				248A9CA11F95A15E004F94CA /* CsoundMIDI.m */,
-				248A9CA21F95A15E004F94CA /* MidiWidgetsManager.m */,
-				248A9CA31F95A15E004F94CA /* SliderMidiWidgetWrapper.m */,
-				248A9CA41F95A15E004F94CA /* CsoundMIDI.h */,
-				248A9CA51F95A15E004F94CA /* SliderMidiWidgetWrapper.h */,
-				248A9CA61F95A15E004F94CA /* MidiWidgetsManager.h */,
-				248A9CA71F95A15E004F94CA /* MidiWidgetWrapper.h */,
-			);
-			path = midi;
-			sourceTree = "<group>";
-		};
-		248A9CA91F95A15E004F94CA /* bindings */ = {
-			isa = PBXGroup;
-			children = (
-				248A9CAA1F95A15E004F94CA /* ui */,
-				248A9CB71F95A15E004F94CA /* motion */,
-			);
-			path = bindings;
-			sourceTree = "<group>";
-		};
-		248A9CAA1F95A15E004F94CA /* ui */ = {
-			isa = PBXGroup;
-			children = (
-				248A9CAB1F95A15E004F94CA /* CsoundSliderBinding.h */,
-				248A9CAC1F95A15E004F94CA /* CsoundMomentaryButtonBinding.m */,
-				248A9CAD1F95A15E004F94CA /* CsoundUI.h */,
-				248A9CAE1F95A15E004F94CA /* CsoundLabelBinding.m */,
-				248A9CAF1F95A15E004F94CA /* CsoundSwitchBinding.m */,
-				248A9CB01F95A15E004F94CA /* CsoundButtonBinding.m */,
-				248A9CB11F95A15E004F94CA /* CsoundSliderBinding.m */,
-				248A9CB21F95A15E004F94CA /* CsoundUI.m */,
-				248A9CB31F95A15E004F94CA /* CsoundMomentaryButtonBinding.h */,
-				248A9CB41F95A15E004F94CA /* CsoundLabelBinding.h */,
-				248A9CB51F95A15E004F94CA /* CsoundButtonBinding.h */,
-				248A9CB61F95A15E004F94CA /* CsoundSwitchBinding.h */,
-			);
-			path = ui;
-			sourceTree = "<group>";
-		};
-		248A9CB71F95A15E004F94CA /* motion */ = {
-			isa = PBXGroup;
-			children = (
-				248A9CB81F95A15E004F94CA /* CsoundGyroscopeBinding.h */,
-				248A9CB91F95A15E004F94CA /* CsoundAccelerometerBinding.m */,
-				248A9CBA1F95A15E004F94CA /* CsoundMotion.h */,
-				248A9CBB1F95A15E004F94CA /* CsoundAttitudeBinding.h */,
-				248A9CBC1F95A15E004F94CA /* CsoundMotion.m */,
-				248A9CBD1F95A15E004F94CA /* CsoundAccelerometerBinding.h */,
-				248A9CBE1F95A15E004F94CA /* CsoundGyroscopeBinding.m */,
-				248A9CBF1F95A15E004F94CA /* CsoundAttitudeBinding.m */,
-			);
-			path = motion;
-			sourceTree = "<group>";
-		};
-		248A9CC01F95A15E004F94CA /* libs */ = {
-			isa = PBXGroup;
-			children = (
-				248A9CC11F95A15E004F94CA /* libcsound.a */,
-				248A9CC21F95A15E004F94CA /* libsndfile.a */,
-			);
-			path = libs;
-			sourceTree = "<group>";
-		};
-		248A9CC31F95A15E004F94CA /* headers */ = {
-			isa = PBXGroup;
-			children = (
-				248A9CC41F95A15E004F94CA /* csdebug.h */,
-				248A9CC51F95A15E004F94CA /* sysdep.h */,
-				248A9CC61F95A15E004F94CA /* float-version.h */,
-				248A9CC71F95A15E004F94CA /* version.h */,
-				248A9CC81F95A15E004F94CA /* OpcodeBase.hpp */,
-				248A9CC91F95A15E004F94CA /* plugin.h */,
-				248A9CCA1F95A15E004F94CA /* text.h */,
-				248A9CCB1F95A15E004F94CA /* csound_standard_types.h */,
-				248A9CCC1F95A15E004F94CA /* pvfileio.h */,
-				248A9CCD1F95A15E004F94CA /* interlocks.h */,
-				248A9CCE1F95A15E004F94CA /* pstream.h */,
-				248A9CCF1F95A15E004F94CA /* csound.hpp */,
-				248A9CD01F95A15E004F94CA /* modload.h */,
-				248A9CD11F95A15E004F94CA /* CppSound.hpp */,
-				248A9CD21F95A15E004F94CA /* cs_par_structs.h */,
-				248A9CD31F95A15E004F94CA /* csound_threaded.hpp */,
-				248A9CD41F95A15E004F94CA /* ugen.h */,
-				248A9CD51F95A15E004F94CA /* csoundCore.h */,
-				248A9CD61F95A15E004F94CA /* soundio.h */,
-				248A9CD71F95A15E004F94CA /* pools.h */,
-				248A9CD81F95A15E004F94CA /* filebuilding.h */,
-				248A9CD91F95A15E004F94CA /* csound_type_system.h */,
-				248A9CDA1F95A15E004F94CA /* csound_data_structures.h */,
-				248A9CDB1F95A15E004F94CA /* cscore.h */,
-				248A9CDC1F95A15E004F94CA /* msg_attr.h */,
-				248A9CDD1F95A15E004F94CA /* cfgvar.h */,
-				248A9CDE1F95A15E004F94CA /* csdl.h */,
-				248A9CDF1F95A15E004F94CA /* cwindow.h */,
-				248A9CE01F95A15E004F94CA /* CsoundFile.hpp */,
-				248A9CE11F95A15E004F94CA /* csound.h */,
-			);
-			path = headers;
 			sourceTree = "<group>";
 		};
 		248A9CE31F95A4BF004F94CA /* Frameworks */ = {
@@ -365,7 +154,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				248A9C8B1F95A0FD004F94CA /* art.scnassets in Resources */,
-				248A9CF71F95A8E8004F94CA /* main.csd in Resources */,
 				248A9C951F95A0FD004F94CA /* LaunchScreen.storyboard in Resources */,
 				248A9C921F95A0FD004F94CA /* Assets.xcassets in Resources */,
 				248A9C901F95A0FD004F94CA /* Main.storyboard in Resources */,
@@ -435,20 +223,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				248A9CE81F95A504004F94CA /* CsoundObj.m in Sources */,
-				248A9CE91F95A507004F94CA /* CsoundMIDI.m in Sources */,
-				248A9CEA1F95A509004F94CA /* MidiWidgetsManager.m in Sources */,
-				248A9CEB1F95A50A004F94CA /* SliderMidiWidgetWrapper.m in Sources */,
-				248A9CF41F95A529004F94CA /* CsoundAttitudeBinding.m in Sources */,
-				248A9CF51F95A576004F94CA /* CsoundGyroscopeBinding.m in Sources */,
-				248A9CEC1F95A511004F94CA /* CsoundMomentaryButtonBinding.m in Sources */,
-				248A9CF31F95A528004F94CA /* CsoundMotion.m in Sources */,
-				248A9CED1F95A512004F94CA /* CsoundLabelBinding.m in Sources */,
-				248A9CF21F95A526004F94CA /* CsoundAccelerometerBinding.m in Sources */,
-				248A9CEE1F95A515004F94CA /* CsoundSwitchBinding.m in Sources */,
-				248A9CEF1F95A516004F94CA /* CsoundButtonBinding.m in Sources */,
-				248A9CF01F95A518004F94CA /* CsoundSliderBinding.m in Sources */,
-				248A9CF11F95A51A004F94CA /* CsoundUI.m in Sources */,
 				248A9C8D1F95A0FD004F94CA /* ViewController.swift in Sources */,
 				248A9C891F95A0FD004F94CA /* AppDelegate.swift in Sources */,
 			);
@@ -599,7 +373,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikhilsingh.Soundscaper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Soundscaper/Soundscaper-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -621,7 +395,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikhilsingh.Soundscaper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Soundscaper/Soundscaper-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

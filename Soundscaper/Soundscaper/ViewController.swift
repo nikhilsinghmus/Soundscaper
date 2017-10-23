@@ -9,6 +9,8 @@ import UIKit
 import SceneKit
 import ARKit
 import AudioKit
+import ReplayKit
+import MessageUI
 
 struct NodePitch {
     var node: SCNNode?
@@ -29,9 +31,20 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     var minimum = 0
     var index = 0
     
+    let videoInput = AVAssetWriterInput(mediaType: .video, outputSettings: [AVVideoCodecKey : AVVideoCodecType.h264,
+                                                                            AVVideoWidthKey : UIScreen.main.bounds.size.width,
+                                                                            AVVideoHeightKey : UIScreen.main.bounds.size.height])
+    let audioInput = AVAssetWriterInput(mediaType: .audio, outputSettings: nil)
+    let micInput = AVAssetWriterInput(mediaType: .audio, outputSettings: nil)
+    let recorder = RPScreenRecorder.shared()
+    let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("\(Date().timeIntervalSince1970).mov".replacingOccurrences(of: " ", with: "_"))
+    var assetWriter: AVAssetWriter!
+    
     let microphone = AKMicrophone()
     var freqTracker: AKFrequencyTracker?
     let string = AKPluckedString()
+    let saw = AKOscillatorBank(waveform: AKTable(.sawtooth, phase: 0, count: 16384))
+    
     
     lazy var callback = AKPeriodicFunction(frequency: 2, handler: {
         
@@ -42,7 +55,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let pitch = self.nodes[self.index].pitch
 
         if let pitch = pitch, pitch > 0 {
-            self.string.trigger(frequency: pitch.midiNoteToFrequency(), amplitude: Double(amp * 20))
+//            self.string.trigger(frequency: pitch.midiNoteToFrequency(), amplitude: Double(amp * 20))
+            self.saw.play(noteNumber: MIDINoteNumber(pitch), velocity: MIDIVelocity(max(amp * 127, 100)))
         }
         
         DispatchQueue.main.async {
@@ -53,31 +67,50 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             }
         }
         
-        let deadlineTime = DispatchTime.now() + (60 / 120) / 10.0
+        let deadlineTime = DispatchTime.now() + 0.05
         DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
             if let node = self.nodes[self.index].node {
                 UIView.animate(withDuration: 0.5, animations: {
                     (node.geometry as! SCNSphere).radius = 0.05
                 })
             }
+            
+            self.saw.stop(noteNumber: MIDINoteNumber(pitch!))
         }
     })
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        do {
+            try FileManager.default.removeItem(at: url)
+        } catch {
+            print(error)
+        }
+        
+        assetWriter = try! AVAssetWriter(url: url, fileType: .mov)
+        
+        saw.attackDuration = 0.001
+        saw.decayDuration = 0.02
+        saw.sustainLevel = 0.5
+        saw.releaseDuration = 0.1
+        
+        // SceneKit
         sceneView.delegate = self
         sceneView.showsStatistics = false
         let scene = SCNScene()
         sceneView.scene = scene
         
+        // Gesture Recognizers
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         view.addGestureRecognizer(tap)
-        
         let swipe = UISwipeGestureRecognizer(target: self, action: #selector(removeNode(_:)))
         view.addGestureRecognizer(swipe)
+        let pinch = UIPinchGestureRecognizer(target: self, action: #selector(stopRecording(_:)))
+        view.addGestureRecognizer(pinch)
         
-        // AudioKit Stuff
+        // AudioKit
         if let inputs = AudioKit.inputDevices {
             do {
                 try AudioKit.setInputDevice(inputs[0])
@@ -94,16 +127,52 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         let silence = AKBooster(freqTracker, gain: 0)
         AudioKit.output = silence
-        AudioKit.output = string
+        AudioKit.output = saw
         
         AudioKit.start(withPeriodicFunctions: callback)
         callback.start()
+        
+        // Screen Recording
+        [videoInput, audioInput, micInput].forEach { assetWriter.add($0) }
+        videoInput.expectsMediaDataInRealTime = true
+        recorder.isMicrophoneEnabled = true
+        
+        recorder.startCapture(handler: { cmbuf, bufType, error in
+            if CMSampleBufferDataIsReady(cmbuf) {
+                let cmtime = CMSampleBufferGetPresentationTimeStamp(cmbuf)
+
+                if self.assetWriter.status == .unknown {
+                    self.assetWriter.startWriting()
+                    self.assetWriter.startSession(atSourceTime: cmtime)
+                }
+
+                if self.assetWriter.status == AVAssetWriterStatus.failed {
+                    print("\(self.assetWriter.error!)")
+                    return
+                }
+
+                switch bufType {
+                case .video: if self.videoInput.isReadyForMoreMediaData { self.videoInput.append(cmbuf) }
+                case .audioApp: if self.audioInput.isReadyForMoreMediaData { self.audioInput.append(cmbuf) }
+                case .audioMic: if self.micInput.isReadyForMoreMediaData { self.micInput.append(cmbuf) }
+                }
+            }
+
+
+        }, completionHandler: { error in
+            print(error ?? "No Error")
+        })
     }
     
     @objc func removeNode(_ gesture: UIGestureRecognizer) {
-        if nodes.count > 2 {
-            if let lastNode = nodes.popLast() {
-                lastNode.node?.removeFromParentNode()
+        let result = sceneView.hitTest(gesture.location(in: sceneView), options: [:])
+        
+        if result.count > 0 {
+            nodes = nodes.filter { $0.node != result[0].node }
+            result[0].node.removeFromParentNode()
+        } else {
+            if let nodepitch = nodes.popLast() {
+                nodepitch.node?.removeFromParentNode()
             }
         }
     }
@@ -186,5 +255,39 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     func sessionInterruptionEnded(_ session: ARSession) {
         // Reset tracking and/or remove existing anchors if consistent tracking is required
         
+    }
+}
+
+extension ViewController: MFMailComposeViewControllerDelegate {
+    @objc func stopRecording(_ gesture: UIGestureRecognizer) {
+        recorder.stopCapture(handler: { error in
+            debugPrint(error)
+            
+            self.assetWriter.finishWriting {
+                let mcvc = MFMailComposeViewController()
+                var fileData: Data?
+                do {
+                    try fileData = Data.init(contentsOf: self.url)
+                } catch {
+                    print(error)
+                    return
+                }
+                
+                print(fileData ?? "noData")
+                
+                DispatchQueue.main.async {
+                    mcvc.mailComposeDelegate = self
+                    mcvc.setMessageBody("Video from \(Date()).", isHTML: false)
+                    mcvc.setSubject("Video!")
+                    mcvc.setToRecipients(["nikhilsinghmus@gmail.com"])
+                    mcvc.addAttachmentData(fileData!, mimeType: "video/quicktime", fileName: self.url.lastPathComponent)
+                    self.present(mcvc, animated: true, completion: nil)
+                }
+            }
+        })
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
     }
 }
