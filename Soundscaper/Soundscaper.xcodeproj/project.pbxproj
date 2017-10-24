@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		22740670FAA27A8543BE7098 /* Pods_Soundscaper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA96C9DEC335740B16DD5DB /* Pods_Soundscaper.framework */; };
+		241633361F9EEC7C00FFFEBB /* NodeSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241633351F9EEC7C00FFFEBB /* NodeSample.swift */; };
 		243E3A331F9ED5630047AC11 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 243E3A311F9ED5630047AC11 /* spark.png */; };
 		243E3A341F9ED5630047AC11 /* P1.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 243E3A321F9ED5630047AC11 /* P1.scnp */; };
 		248A9C891F95A0FD004F94CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248A9C881F95A0FD004F94CA /* AppDelegate.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		15A84D8A02CFBBD0DE7BE60C /* Pods-Soundscaper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soundscaper.release.xcconfig"; path = "Pods/Target Support Files/Pods-Soundscaper/Pods-Soundscaper.release.xcconfig"; sourceTree = "<group>"; };
+		241633351F9EEC7C00FFFEBB /* NodeSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeSample.swift; sourceTree = "<group>"; };
 		243E3A311F9ED5630047AC11 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		243E3A321F9ED5630047AC11 /* P1.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = P1.scnp; sourceTree = "<group>"; };
 		248A9C851F95A0FD004F94CA /* Soundscaper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Soundscaper.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +72,7 @@
 				248A9C881F95A0FD004F94CA /* AppDelegate.swift */,
 				248A9C8A1F95A0FD004F94CA /* art.scnassets */,
 				248A9C8C1F95A0FD004F94CA /* ViewController.swift */,
+				241633351F9EEC7C00FFFEBB /* NodeSample.swift */,
 				243E3A311F9ED5630047AC11 /* spark.png */,
 				243E3A321F9ED5630047AC11 /* P1.scnp */,
 				248A9C8E1F95A0FD004F94CA /* Main.storyboard */,
@@ -231,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				241633361F9EEC7C00FFFEBB /* NodeSample.swift in Sources */,
 				248A9C8D1F95A0FD004F94CA /* ViewController.swift in Sources */,
 				248A9C891F95A0FD004F94CA /* AppDelegate.swift in Sources */,
 			);
