@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		22740670FAA27A8543BE7098 /* Pods_Soundscaper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA96C9DEC335740B16DD5DB /* Pods_Soundscaper.framework */; };
+		243E3A331F9ED5630047AC11 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 243E3A311F9ED5630047AC11 /* spark.png */; };
+		243E3A341F9ED5630047AC11 /* P1.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 243E3A321F9ED5630047AC11 /* P1.scnp */; };
 		248A9C891F95A0FD004F94CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248A9C881F95A0FD004F94CA /* AppDelegate.swift */; };
 		248A9C8B1F95A0FD004F94CA /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 248A9C8A1F95A0FD004F94CA /* art.scnassets */; };
 		248A9C8D1F95A0FD004F94CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248A9C8C1F95A0FD004F94CA /* ViewController.swift */; };
@@ -18,6 +20,8 @@
 
 /* Begin PBXFileReference section */
 		15A84D8A02CFBBD0DE7BE60C /* Pods-Soundscaper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soundscaper.release.xcconfig"; path = "Pods/Target Support Files/Pods-Soundscaper/Pods-Soundscaper.release.xcconfig"; sourceTree = "<group>"; };
+		243E3A311F9ED5630047AC11 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		243E3A321F9ED5630047AC11 /* P1.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = P1.scnp; sourceTree = "<group>"; };
 		248A9C851F95A0FD004F94CA /* Soundscaper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Soundscaper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		248A9C881F95A0FD004F94CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		248A9C8A1F95A0FD004F94CA /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -66,6 +70,8 @@
 				248A9C881F95A0FD004F94CA /* AppDelegate.swift */,
 				248A9C8A1F95A0FD004F94CA /* art.scnassets */,
 				248A9C8C1F95A0FD004F94CA /* ViewController.swift */,
+				243E3A311F9ED5630047AC11 /* spark.png */,
+				243E3A321F9ED5630047AC11 /* P1.scnp */,
 				248A9C8E1F95A0FD004F94CA /* Main.storyboard */,
 				248A9C911F95A0FD004F94CA /* Assets.xcassets */,
 				248A9C931F95A0FD004F94CA /* LaunchScreen.storyboard */,
@@ -153,9 +159,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				243E3A331F9ED5630047AC11 /* spark.png in Resources */,
 				248A9C8B1F95A0FD004F94CA /* art.scnassets in Resources */,
 				248A9C951F95A0FD004F94CA /* LaunchScreen.storyboard in Resources */,
 				248A9C921F95A0FD004F94CA /* Assets.xcassets in Resources */,
+				243E3A341F9ED5630047AC11 /* P1.scnp in Resources */,
 				248A9C901F95A0FD004F94CA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

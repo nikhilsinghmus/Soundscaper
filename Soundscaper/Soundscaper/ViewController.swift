@@ -15,11 +15,20 @@ import MessageUI
 struct NodePitch {
     var node: SCNNode?
     var pitch: Int?
-    var amp: Double = 0
+    var particleSystem: SCNParticleSystem?
+    var player: AKAudioPlayer?
+    var amp: Double = 0 {
+        didSet {
+            particleSystem?.birthRate = CGFloat(amp * 150)
+            player?.volume = amp
+        }
+    }
     
-    init(_ scnnode: SCNNode?, _ midiPitch: Int) {
+    init(_ scnnode: SCNNode?, _ midiPitch: Int, _ scnparticleSystem: SCNParticleSystem?, _ audioPlayer: AKAudioPlayer?) {
         node = scnnode
         pitch = midiPitch
+        particleSystem = scnparticleSystem
+        player = audioPlayer
     }
 }
 
@@ -27,7 +36,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     
     @IBOutlet var sceneView: ARSCNView!
     
-    var nodes: [NodePitch] = [NodePitch(nil, 0)]
+    var nodes: [NodePitch] = [NodePitch(nil, 0, nil, nil)]
     var minimum = 0
     var index = 0
     
@@ -44,39 +53,41 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     var freqTracker: AKFrequencyTracker?
     let string = AKPluckedString()
     let saw = AKOscillatorBank(waveform: AKTable(.sawtooth, phase: 0, count: 16384))
+    var nodeRecorder: AKNodeRecorder?
+    var file: AKAudioFile?
     
     
     lazy var callback = AKPeriodicFunction(frequency: 2, handler: {
         
-        self.index = ((self.index + 1) >= self.nodes.count) ? self.minimum : self.index + 1
+//        self.index = ((self.index + 1) >= self.nodes.count) ? self.minimum : self.index + 1
         
         self.checkAmps()
-        let amp = self.nodes[self.index].amp
-        let pitch = self.nodes[self.index].pitch
-
-        if let pitch = pitch, pitch > 0 {
-//            self.string.trigger(frequency: pitch.midiNoteToFrequency(), amplitude: Double(amp * 20))
-            self.saw.play(noteNumber: MIDINoteNumber(pitch), velocity: MIDIVelocity(max(amp * 127, 100)))
-        }
-        
-        DispatchQueue.main.async {
-            if let node = self.nodes[self.index].node {
-                UIView.animate(withDuration: 0.5, animations: {
-                    (node.geometry as! SCNSphere).radius = 0.1
-                })
-            }
-        }
-        
-        let deadlineTime = DispatchTime.now() + 0.05
-        DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
-            if let node = self.nodes[self.index].node {
-                UIView.animate(withDuration: 0.5, animations: {
-                    (node.geometry as! SCNSphere).radius = 0.05
-                })
-            }
-            
-            self.saw.stop(noteNumber: MIDINoteNumber(pitch!))
-        }
+//        let amp = self.nodes[self.index].amp
+//        let pitch = self.nodes[self.index].pitch
+//
+//        if let pitch = pitch, pitch > 0 {
+////            self.string.trigger(frequency: pitch.midiNoteToFrequency(), amplitude: Double(amp * 20))
+////            self.saw.play(noteNumber: MIDINoteNumber(pitch), velocity: MIDIVelocity(max(amp * 127, 80)))
+//        }
+//        
+//        DispatchQueue.main.async {
+//            if let node = self.nodes[self.index].node {
+//                UIView.animate(withDuration: 0.5, animations: {
+//                    (node.geometry as! SCNSphere).radius = 0.05
+//                })
+//            }
+//        }
+//        
+//        let deadlineTime = DispatchTime.now() + 0.05
+//        DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
+//            if let node = self.nodes[self.index].node {
+//                UIView.animate(withDuration: 0.5, animations: {
+//                    (node.geometry as! SCNSphere).radius = 0.01
+//                })
+//            }
+//            
+//            self.saw.stop(noteNumber: MIDINoteNumber(pitch!))
+//        }
     })
     
     override func viewDidLoad() {
@@ -191,22 +202,27 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     }
 
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
-        guard let currentFrame = sceneView.session.currentFrame else {
-            return
-        }
-        
-        let sphereNode = SCNNode(geometry: SCNSphere(radius: 0.05))
-        sceneView.scene.rootNode.addChildNode(sphereNode)
-        
-        var translation = matrix_identity_float4x4
-        translation.columns.3.z = -0.1
-        sphereNode.simdTransform = matrix_multiply(currentFrame.camera.transform, translation)
-        
-        nodes.append(NodePitch(sphereNode, hz2midi(freqTracker?.frequency ?? 440)))
-        
-        let _: () = {
-            minimum = 1
-        }()
+//        guard let currentFrame = sceneView.session.currentFrame else {
+//            return
+//        }
+//
+//        let sphereNode = SCNNode(geometry: SCNSphere(radius: 0.01))
+//        let psys = SCNParticleSystem(named: "P1", inDirectory: nil)!
+//        psys.emitterShape = SCNSphere(radius: 0.01)
+//        sphereNode.addParticleSystem(psys)
+//        sceneView.scene.rootNode.addChildNode(sphereNode)
+//
+//        var translation = matrix_identity_float4x4
+//        translation.columns.3.z = -0.1
+//        print(currentFrame.camera.transform)
+//        sphereNode.simdTransform = matrix_multiply(currentFrame.camera.transform, translation)
+//        sphereNode.localRotate(by: SCNQuaternion.init(1, 0, 0, 0))
+//
+//        nodes.append(NodePitch(sphereNode, hz2midi(freqTracker?.frequency ?? 440), psys))
+//
+//        let _: () = {
+//            minimum = 1
+//        }()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -289,5 +305,57 @@ extension ViewController: MFMailComposeViewControllerDelegate {
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension ViewController {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        do {
+            file = try AKAudioFile()
+            microphone.outputNode.removeTap(onBus: 0)
+            nodeRecorder = try AKNodeRecorder(node: microphone, file: file)
+            try nodeRecorder?.record()
+        } catch {
+            print(error)
+        }
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        nodeRecorder?.stop()
+        
+        guard let file = file else { return }
+        
+        let player: AKAudioPlayer?
+        do {
+            player = try AKAudioPlayer(file: file)
+            player?.looping = true
+            AudioKit.output = player
+            player?.play()
+        } catch {
+            print(error)
+            return
+        }
+        
+        guard let currentFrame = sceneView.session.currentFrame else {
+            return
+        }
+        
+        let sphereNode = SCNNode(geometry: SCNSphere(radius: 0.01))
+        let psys = SCNParticleSystem(named: "P1", inDirectory: nil)!
+        psys.emitterShape = SCNSphere(radius: 0.01)
+        sphereNode.addParticleSystem(psys)
+        sceneView.scene.rootNode.addChildNode(sphereNode)
+        
+        var translation = matrix_identity_float4x4
+        translation.columns.3.z = -0.1
+        print(currentFrame.camera.transform)
+        sphereNode.simdTransform = matrix_multiply(currentFrame.camera.transform, translation)
+        sphereNode.localRotate(by: SCNQuaternion.init(1, 0, 0, 0))
+        
+        nodes.append(NodePitch(sphereNode, hz2midi(freqTracker?.frequency ?? 440), psys, player))
+        
+        let _: () = {
+            minimum = 1
+        }()
     }
 }
