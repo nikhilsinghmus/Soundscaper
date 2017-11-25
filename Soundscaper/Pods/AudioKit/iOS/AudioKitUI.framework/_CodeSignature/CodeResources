@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/AudioKitUI-Swift.h</key>
 		<data>
-		8+2TEKklXFSka3o5kiDhYHaXrsc=
+		xRio4S4eMvTe9c4cGTvDMH/YACE=
 		</data>
 		<key>Headers/AudioKitUI.h</key>
 		<data>
@@ -14,39 +14,39 @@
 		</data>
 		<key>Headers/EZAudioDisplayLink.h</key>
 		<data>
-		L6rllSHQyL7A4ahTF5mITqyvxEU=
+		bG/u5LK+xgEyNfaHb7jf6sDgWew=
 		</data>
 		<key>Headers/EZAudioPlot.h</key>
 		<data>
-		EgxXRO6W6Rdy1h7Oe5vlbPLaMmA=
+		Z9l53P5EgMqTWxfVGlENIbrGrWQ=
 		</data>
 		<key>Headers/EZAudioPlotGL.h</key>
 		<data>
-		dvcXVlxj/8VOO3h8QCwFSR0iqbU=
+		k6SVFD6TEriNLL6YpkU684jc5ck=
 		</data>
 		<key>Headers/EZPlot.h</key>
 		<data>
-		CffAcJWPu2MVYFuOfFRaQtl6XYo=
+		gkqTi1HgZauqmn1tOQ2Nbg+6yPI=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		NSD+OdgiqaHvrqSgvnTxfPNNCPw=
+		4ZSQpRHtUxqA2zCy7nK4gfC+Yo0=
 		</data>
 		<key>Modules/AudioKitUI.swiftmodule/i386.swiftdoc</key>
 		<data>
-		HWGwNbpQj1bfHwXRh64EngRtZOc=
+		bpAdSomrSUTdlT091y9ahnuSkM0=
 		</data>
 		<key>Modules/AudioKitUI.swiftmodule/i386.swiftmodule</key>
 		<data>
-		T52hviWAKTOx+XD5p5a8KT3cvKs=
+		Tm3u037Osicpaon2CYhilv9h0q4=
 		</data>
 		<key>Modules/AudioKitUI.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		hpH7AnIx32povjs82N8/FtvRaKU=
+		P+BOg0lsVMP6qdAvhn7HaV7ZiKs=
 		</data>
 		<key>Modules/AudioKitUI.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		gcvbf059dZZbxkLXJwhB3Kty69w=
+		VdtlJDMuWr0BRIsizXRLSWPbd3g=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -59,11 +59,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			8+2TEKklXFSka3o5kiDhYHaXrsc=
+			xRio4S4eMvTe9c4cGTvDMH/YACE=
 			</data>
 			<key>hash2</key>
 			<data>
-			nU6mpzBLhZGuWc+JICpl0NkVmdqCFijK3D3JhVb9MeA=
+			EfjYveD+U0/htv/d08zuc6bh7STFfVlOfDWusAh8Btw=
 			</data>
 		</dict>
 		<key>Headers/AudioKitUI.h</key>
@@ -81,88 +81,88 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			L6rllSHQyL7A4ahTF5mITqyvxEU=
+			bG/u5LK+xgEyNfaHb7jf6sDgWew=
 			</data>
 			<key>hash2</key>
 			<data>
-			N3BNgtlJtVHFnOmFWsUlDYnVH6QYFJOoGDKjxOTcnaI=
+			wsf2Dg1pvVN7WdcVorttnXq0eJUQ1/Ciu5SD+Xtvbrs=
 			</data>
 		</dict>
 		<key>Headers/EZAudioPlot.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			EgxXRO6W6Rdy1h7Oe5vlbPLaMmA=
+			Z9l53P5EgMqTWxfVGlENIbrGrWQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			og8o2x4gQNllZ6sCVgoWvZF+Z3SU318OhblXkBvoKTw=
+			DKSDbsUjKVixdtdiAtgZ8AU1fcRdl45Wzz8+JeKZIWo=
 			</data>
 		</dict>
 		<key>Headers/EZAudioPlotGL.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			dvcXVlxj/8VOO3h8QCwFSR0iqbU=
+			k6SVFD6TEriNLL6YpkU684jc5ck=
 			</data>
 			<key>hash2</key>
 			<data>
-			Nr3+fPPu0TliFlWfOZapX2YDCCW1Q074bVzTQdhKfXw=
+			vZ0TLAB5eWG/BKTU+eW1yVHNrd0zQyR6YHCI3kBKwso=
 			</data>
 		</dict>
 		<key>Headers/EZPlot.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			CffAcJWPu2MVYFuOfFRaQtl6XYo=
+			gkqTi1HgZauqmn1tOQ2Nbg+6yPI=
 			</data>
 			<key>hash2</key>
 			<data>
-			UTTJnOjadXCZNuj0wVTjRJA6UgDgX6wBSmgYKxtVLdE=
+			bawXL2mRw1dvvBho+aDv50XuuYXAv6JsxTkS0frhOv4=
 			</data>
 		</dict>
 		<key>Modules/AudioKitUI.swiftmodule/i386.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			HWGwNbpQj1bfHwXRh64EngRtZOc=
+			bpAdSomrSUTdlT091y9ahnuSkM0=
 			</data>
 			<key>hash2</key>
 			<data>
-			YaX6kDEZm3qzuM2mfuyhNRSESD6WhUEhn7iiBTKGgjM=
+			CferNEABZtmLfLBbDdf3gDru6mm7lvyEBlq00r9sKNg=
 			</data>
 		</dict>
 		<key>Modules/AudioKitUI.swiftmodule/i386.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			T52hviWAKTOx+XD5p5a8KT3cvKs=
+			Tm3u037Osicpaon2CYhilv9h0q4=
 			</data>
 			<key>hash2</key>
 			<data>
-			N8wCLlfjluGtOzAHDC8s91anshKYJATN8WSA/niI3Zc=
+			dM0L3GUIwLq06pmkLWc0Gd/C51d3oPV97xxcItRP04Y=
 			</data>
 		</dict>
 		<key>Modules/AudioKitUI.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			hpH7AnIx32povjs82N8/FtvRaKU=
+			P+BOg0lsVMP6qdAvhn7HaV7ZiKs=
 			</data>
 			<key>hash2</key>
 			<data>
-			ctfPiNyhDlC54sj3DVUaqQZgKoSa2YvsVT9AdvnE15g=
+			onmHqOrZaiaVDBGmUowkzfTMCKBWzs7eRU3ORyIfU+g=
 			</data>
 		</dict>
 		<key>Modules/AudioKitUI.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			gcvbf059dZZbxkLXJwhB3Kty69w=
+			VdtlJDMuWr0BRIsizXRLSWPbd3g=
 			</data>
 			<key>hash2</key>
 			<data>
-			QlHsp91Am+dTABS76L0BbDaSQz/wr3sLZbcdHPmPElg=
+			4kyZBNiFn1cl9dYg/T/9XYYWVb++RrDcQ2geJE1v4Vc=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

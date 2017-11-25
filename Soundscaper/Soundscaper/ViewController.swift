@@ -57,6 +57,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         displayLink.add(to: .main, forMode: .defaultRunLoopMode)
     }
     
+    // Remove a node if tapped
     @objc func removeNode(_ gesture: UIGestureRecognizer) {
         let result = sceneView.hitTest(gesture.location(in: sceneView), options: [:])
         
@@ -70,10 +71,17 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         }
     }
     
+    // Re-evaluate amplitudes depending on distance between user (camera) and node
     @objc func checkAmps() {
+        
         for i in 0 ..< nodes.count {
             if let node = nodes[i].node, let camera = sceneView.session.currentFrame?.camera {
-                nodes[i].amp = abs(1 - (abs(node.position.z - (camera.transform.columns.3.z)) - 0.5) * 2)
+                let node_transform = matrix_float4x4(node.transform)
+                let camera_transform = camera.transform
+                let distance = abs(((node_transform.columns.3.z - camera_transform.columns.3.z)
+                    + (node_transform.columns.3.x - camera_transform.columns.3.x)
+                    + (node_transform.columns.3.y - camera_transform.columns.3.y))/3.0)
+                nodes[i].amp = (Double(abs((1 - (distance - 0.5)) * 2)))
             }
         }
     }
@@ -87,7 +95,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-
         sceneView.session.pause()
     }
     
@@ -112,6 +119,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     }
 }
 
+// MARK: Touch handling
 extension ViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         

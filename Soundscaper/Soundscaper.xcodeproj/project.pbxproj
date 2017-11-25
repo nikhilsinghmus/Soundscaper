@@ -12,7 +12,6 @@
 		243E3A331F9ED5630047AC11 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 243E3A311F9ED5630047AC11 /* spark.png */; };
 		243E3A341F9ED5630047AC11 /* P1.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 243E3A321F9ED5630047AC11 /* P1.scnp */; };
 		248A9C891F95A0FD004F94CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248A9C881F95A0FD004F94CA /* AppDelegate.swift */; };
-		248A9C8B1F95A0FD004F94CA /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 248A9C8A1F95A0FD004F94CA /* art.scnassets */; };
 		248A9C8D1F95A0FD004F94CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248A9C8C1F95A0FD004F94CA /* ViewController.swift */; };
 		248A9C901F95A0FD004F94CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 248A9C8E1F95A0FD004F94CA /* Main.storyboard */; };
 		248A9C921F95A0FD004F94CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 248A9C911F95A0FD004F94CA /* Assets.xcassets */; };
@@ -26,7 +25,6 @@
 		243E3A321F9ED5630047AC11 /* P1.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = P1.scnp; sourceTree = "<group>"; };
 		248A9C851F95A0FD004F94CA /* Soundscaper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Soundscaper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		248A9C881F95A0FD004F94CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		248A9C8A1F95A0FD004F94CA /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		248A9C8C1F95A0FD004F94CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		248A9C8F1F95A0FD004F94CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		248A9C911F95A0FD004F94CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -70,7 +68,6 @@
 			isa = PBXGroup;
 			children = (
 				248A9C881F95A0FD004F94CA /* AppDelegate.swift */,
-				248A9C8A1F95A0FD004F94CA /* art.scnassets */,
 				248A9C8C1F95A0FD004F94CA /* ViewController.swift */,
 				241633351F9EEC7C00FFFEBB /* NodeSample.swift */,
 				243E3A311F9ED5630047AC11 /* spark.png */,
@@ -163,7 +160,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				243E3A331F9ED5630047AC11 /* spark.png in Resources */,
-				248A9C8B1F95A0FD004F94CA /* art.scnassets in Resources */,
 				248A9C951F95A0FD004F94CA /* LaunchScreen.storyboard in Resources */,
 				248A9C921F95A0FD004F94CA /* Assets.xcassets in Resources */,
 				243E3A341F9ED5630047AC11 /* P1.scnp in Resources */,
