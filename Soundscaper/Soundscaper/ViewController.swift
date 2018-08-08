@@ -49,7 +49,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         let silence = AKBooster(microphone, gain: 0)
         AudioKit.output = silence
-        AudioKit.start()
+        try? AudioKit.start()
         microphone.start()
         
         // DisplayLink

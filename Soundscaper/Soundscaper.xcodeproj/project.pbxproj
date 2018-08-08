@@ -108,8 +108,6 @@
 				248A9C811F95A0FD004F94CA /* Sources */,
 				248A9C821F95A0FD004F94CA /* Frameworks */,
 				248A9C831F95A0FD004F94CA /* Resources */,
-				04735CC139A0DD4D70AD8C1E /* [CP] Embed Pods Frameworks */,
-				89CB20DCE9A88B6F8D642AFC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,41 +168,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		04735CC139A0DD4D70AD8C1E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Soundscaper/Pods-Soundscaper-frameworks.sh",
-				"${PODS_ROOT}/AudioKit/iOS/AudioKit.framework",
-				"${PODS_ROOT}/AudioKit/iOS/AudioKitUI.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AudioKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AudioKitUI.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Soundscaper/Pods-Soundscaper-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		89CB20DCE9A88B6F8D642AFC /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Soundscaper/Pods-Soundscaper-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		E4DFCD8CBB492D7C5AEDED10 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
